@@ -14,8 +14,17 @@ function App() {
   const [temperatureMin, setTemperatureMin] = useState([])
   const [temperatureSamples, setTemperatureSamples] = useState([])
   const [sol, setSol] = useState(0)
-  const [First_UTC, setFirst_UTC] = useState("")
-  const [Last_UTC, setLast_UTC] = useState("")
+  const [first_UTC, setFirst_UTC] = useState("")
+  const [last_UTC, setLast_UTC] = useState("")
+  const [season, setSeason] = useState("")
+  const [pressureAverage, setPressureAverage] = useState([])
+  const [pressureMax, setPressureMax] = useState([])
+  const [pressureMin, setPressureMin] = useState([])
+  const [pressureSamples, setPressureSamples] = useState([])
+  const [windspeedAverage, setWindSpeedAverage] = useState([])
+  const [windspeedMax, setWindSpeedMax] = useState([])
+  const [windspeedMin, setWindSpeedMin] = useState([])
+  const [windspeedSamples, setWindspeedSamples] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +38,15 @@ function App() {
       setSol(data.sol_keys[6])
       setFirst_UTC(data[data.sol_keys[6]].First_UTC)
       setLast_UTC(data[data.sol_keys[6]].Last_UTC)
+      setSeason(data[data.sol_keys[6]].Season)
+      setPressureAverage(data[data.sol_keys[6]].PRE.av)
+      setPressureMax(data[data.sol_keys[6]].PRE.mx)
+      setPressureMin(data[data.sol_keys[6]].PRE.mn)
+      setPressureSamples(data[data.sol_keys[6]].PRE.ct)
+      setWindSpeedAverage(data[data.sol_keys[6]].HWS.av)
+      setWindSpeedMax(data[data.sol_keys[6]].HWS.mx)
+      setWindSpeedMin(data[data.sol_keys[6]].HWS.mn)
+      setWindspeedSamples(data[data.sol_keys[6]].HWS.ct)
     }
 
     fetchData()
@@ -38,7 +56,7 @@ function App() {
 
 
   return (
-  <div><h1>Sol: {sol} </h1><h1>Average temperature: {temperatureAverage}°F</h1><h1>Max Temperature: {temperatureMax}°F</h1><h1>Min Temperature: {temperatureMin}°F</h1><h1>Number of samples this sol: {temperatureSamples}</h1><h1>First_UTC: {First_UTC}</h1><h1>Last_UTC: {Last_UTC}</h1></div>
+  <div><h1>Elysium Planitia</h1><h1>Sol: {sol} </h1><h1>Average temperature: {temperatureAverage} °F</h1><h1>Max temperature: {temperatureMax} °F</h1><h1>Min temperature: {temperatureMin}°F</h1><h1>Number of temperature-samples this sol: {temperatureSamples}</h1><h1>First_UTC: {first_UTC}</h1><h1>Last_UTC: {last_UTC}</h1><h1>Season: {season}</h1><h1>Average pressure: {pressureAverage} hPa</h1><h1>Max pressure: {pressureMax} hPa</h1><h1>Min pressure: {pressureMin} hPa</h1><h1>Number of pressure-samples this sol: {pressureSamples}</h1><h1>Average windspeed: {windspeedAverage} m/s</h1><h1>Max windspeed: {windspeedMax} m/s</h1><h1>Min windspeed: {windspeedMin} m/s</h1><h1>Number of windspeed samples this sol: {windspeedSamples}</h1></div>
   )
 }
 
