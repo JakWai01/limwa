@@ -4,15 +4,6 @@ import "./App.css";
 import Graph from "./Components/Graph";
 
 function App() {
-  // [ ] Store data to make charts
-  // [ ] Distinguish into easy and advanced mode
-  // [ ] Create Component for swap to advanced mode on the bottom of the other modes onClick
-  // [x] Style data component
-  // [ ] Create graph component
-  // [ ] Create prediction through interpolation
-  // [ ] Style overall website
-  // [ ] publish Web-App and connect with Website
-  // [ ] convert between Fahrenheit, Celsius, Kelvin
 
   const numbers = [6, 5, 4, 3, 2, 1, 0];
 
@@ -27,4 +18,5 @@ function App() {
     </>
   );
 }
+
 export default App;
