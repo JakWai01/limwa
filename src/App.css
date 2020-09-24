@@ -1,0 +1,40 @@
+body {
+    font-family: Helvetica;
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.main {
+    background-color: #437efd;
+    border-radius: 40px;
+    padding: 20px;
+    padding-left: 65px;
+    margin: 40px;
+    padding-bottom: 200px;
+
+}
+
+.average {
+    font-size: 62px;
+}
+
+.maxMin {
+    margin-top: -35px;
+    margin-bottom: -15px;
+}
+
+.divBox {
+    margin-left: -100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+h1 {
+    font-size: 62px;
+    margin-bottom: 0px;
+}
+
+.sol {
+    margin-bottom: -20px;
+    padding-bottom: 0px;
+}
