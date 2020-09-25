@@ -38,3 +38,8 @@ h1 {
     margin-bottom: -20px;
     padding-bottom: 0px;
 }
+
+select {
+    background-color: white;
+    color: #437efd;
+}
