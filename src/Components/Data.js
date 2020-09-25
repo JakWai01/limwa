@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Data({ dayIndex }) {
+function Data({ dayIndex, unit }) {
   if (dayIndex > 6 || dayIndex < 0) {
     console.log("Please enter a value between 0 and 6");
   }
@@ -21,9 +21,6 @@ function Data({ dayIndex }) {
   const [windspeedMax, setWindSpeedMax] = useState([]);
   const [windspeedMin, setWindSpeedMin] = useState([]);
   const [windspeedSamples, setWindspeedSamples] = useState([]);
-
-  const [unit, setUnit] = useState("");
-  console.log(unit);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,21 +66,17 @@ function Data({ dayIndex }) {
 
   return (
     <>
-      <form>
-        <select onChange={(e) => setUnit(e.target.value)}>
-          <option defaultValue value="Fahrenheit">F</option>
-          <option value="Celsius">C</option>
-          <option value="Kelvin">K</option>
-        </select>
-      </form>
-
+      
       <div className="main">
         <h1 className="sol">Sol: {sol} </h1>
         <h2>Elysium Planitia, {season}</h2>
 
         <div className="divBox">
           <div className="container">
-            <h2 className="average">{Math.round(temperatureAverage)} {unit === "Kelvin"? "K" : unit === "Celsius"? "C" : "F"}</h2>
+            <h2 className="average">
+              {Math.round(temperatureAverage)}{" "}
+              {unit === "Kelvin" ? "K" : unit === "Celsius" ? "C" : "F"}
+            </h2>
             <h2 className="maxMin">
               {Math.round(temperatureMax)}° / {Math.round(temperatureMin)}°
             </h2>
