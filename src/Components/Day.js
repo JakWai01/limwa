@@ -19,7 +19,7 @@ function Day({ day, format }) {
           <div className="container">
             <h2 className="average">{day.pressureAverage} hPa</h2>
             <h2 className="maxMin">
-              {day.pressureMax} hPa / {day.pressureMin} hPa
+              {day.pressureMax} / {day.pressureMin}
             </h2>
             <h2>Samples: {day.pressureSamples}</h2>
           </div>
@@ -27,7 +27,7 @@ function Day({ day, format }) {
           <div className="container">
             <h2 className="average">{day.windspeedAverage} m/s</h2>
             <h2 className="maxMin">
-              {day.windspeedMax} m/s / {day.windspeedMin} m/s
+              {day.windspeedMax} / {day.windspeedMin}
             </h2>
             <h2>Samples: {day.windspeedSamples}</h2>
           </div>
