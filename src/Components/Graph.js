@@ -148,7 +148,7 @@ function Graph({ days }) {
   return (
     <>
       <div className="graphContainer">
-        <ResponsiveContainer width="33%" height={200}>
+        <ResponsiveContainer width="99%" height={200}>
           <LineChart
             data={temp}
             margin={{
@@ -173,7 +173,7 @@ function Graph({ days }) {
             <Line type="monotone" dataKey="minTemp" stroke="#eb4034" />
           </LineChart>
         </ResponsiveContainer>
-        <ResponsiveContainer width="33%" height={200}>
+        <ResponsiveContainer width="99%" height={200}>
           <LineChart
             width={500}
             height={300}
@@ -200,7 +200,7 @@ function Graph({ days }) {
             <Line type="monotone" dataKey="minPres" stroke="#eb4034" />
           </LineChart>
         </ResponsiveContainer>
-        <ResponsiveContainer width="33%" height={200}>
+        <ResponsiveContainer width="99%" height={200}>
           <LineChart
             width={500}
             height={300}

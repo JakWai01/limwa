@@ -1,6 +1,12 @@
 .graphContainer {
-    display: flex;
-    flex-direction: row;
+    /*display: flex;
+    flex-direction: row;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 10px;
     margin-left: -20px;
+}
+
+@media screen and (max-width: 768px) {
+    .graphContainer{grid-template-columns: 1fr;}
 }
