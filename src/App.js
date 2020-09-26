@@ -5,6 +5,7 @@ import Day from "./Components/Day";
 import "./App.css";
 import Graph from "./Components/Graph";
 import "./Graph.css";
+import {Helmet} from "react-helmet";
 
 const App = ({ token }) => (
   <DataProvider token={token}>
@@ -14,6 +15,9 @@ const App = ({ token }) => (
 
       return (
         <>
+        <Helmet>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </Helmet>
           <Filter
             format={format}
             onChange={(newFormat) => setFormat(newFormat)}
