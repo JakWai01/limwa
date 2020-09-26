@@ -4,7 +4,7 @@ import Filter from "./Components/Filter";
 import Day from "./Components/Day";
 import "./App.css";
 import Graph from "./Components/Graph";
-import "./Graph.css"
+import "./Graph.css";
 
 const App = ({ token }) => (
   <DataProvider token={token}>
@@ -18,12 +18,12 @@ const App = ({ token }) => (
             format={format}
             onChange={(newFormat) => setFormat(newFormat)}
           />
-
-          {days.map((day, index) => (
-            <Day day={day} key={index} format={format} />
-          ))}
-
           <Graph days={days} />
+          <div className="dayContainer">
+            {days.map((day, index) => (
+              <Day day={day} key={index} format={format} />
+            ))}
+          </div>
         </>
       );
     }}

@@ -13,7 +13,7 @@ function Day({ day, format }) {
             <h2 className="maxMin">
               {day.temperatureMax} / {day.temperatureMin}
             </h2>
-            <h2>Samples: {day.temperatureSamples}</h2>
+            <h2 className="samples">Samples: {day.temperatureSamples}</h2>
           </div>
 
           <div className="container">
@@ -21,7 +21,7 @@ function Day({ day, format }) {
             <h2 className="maxMin">
               {day.pressureMax} / {day.pressureMin}
             </h2>
-            <h2>Samples: {day.pressureSamples}</h2>
+            <h2 className="samples">Samples: {day.pressureSamples}</h2>
           </div>
 
           <div className="container">
@@ -29,7 +29,7 @@ function Day({ day, format }) {
             <h2 className="maxMin">
               {day.windspeedMax} / {day.windspeedMin}
             </h2>
-            <h2>Samples: {day.windspeedSamples}</h2>
+            <h2 className="samples">Samples: {day.windspeedSamples}</h2>
           </div>
         </div>
       </div>

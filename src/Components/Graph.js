@@ -6,7 +6,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from "recharts";
 
@@ -149,13 +148,13 @@ function Graph({ days }) {
   return (
     <>
       <div className="graphContainer">
-        <ResponsiveContainer width="33%" height={400}>
+        <ResponsiveContainer width="33%" height={200}>
           <LineChart
             data={temp}
             margin={{
               top: 5,
               right: 30,
-              left: 20,
+              left: 5,
               bottom: 5,
             }}
           >
@@ -163,7 +162,7 @@ function Graph({ days }) {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
+            
             <Line
               type="monotone"
               dataKey="maxTemp"
@@ -174,7 +173,7 @@ function Graph({ days }) {
             <Line type="monotone" dataKey="minTemp" stroke="#eb4034" />
           </LineChart>
         </ResponsiveContainer>
-        <ResponsiveContainer width="33%" height={400}>
+        <ResponsiveContainer width="33%" height={200}>
           <LineChart
             width={500}
             height={300}
@@ -182,7 +181,7 @@ function Graph({ days }) {
             margin={{
               top: 5,
               right: 30,
-              left: 20,
+              left: 5,
               bottom: 5,
             }}
           >
@@ -190,7 +189,7 @@ function Graph({ days }) {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
+            
             <Line
               type="monotone"
               dataKey="maxPres"
@@ -201,7 +200,7 @@ function Graph({ days }) {
             <Line type="monotone" dataKey="minPres" stroke="#eb4034" />
           </LineChart>
         </ResponsiveContainer>
-        <ResponsiveContainer width="33%" height={400}>
+        <ResponsiveContainer width="33%" height={200}>
           <LineChart
             width={500}
             height={300}
@@ -209,7 +208,7 @@ function Graph({ days }) {
             margin={{
               top: 5,
               right: 30,
-              left: 20,
+              left: 5,
               bottom: 5,
             }}
           >
@@ -217,7 +216,7 @@ function Graph({ days }) {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
+            
             <Line
               type="monotone"
               dataKey="maxWind"
