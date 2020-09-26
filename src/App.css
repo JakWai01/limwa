@@ -18,11 +18,6 @@ body {
     font-size: 16px;
 }
 
-.maxMin {
-    /*margin-top: -35px;
-    margin-bottom: -15px;*/
-}
-
 .divBox {
     margin-left: 0px;
     display: flex;
@@ -61,4 +56,8 @@ h2 {
 
 .maxMin {
     margin-top: 6px;
+}
+
+@media screen and (max-width: 768px) {
+    .divBox {flex-direction: column;}
 }
