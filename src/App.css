@@ -1,67 +1,63 @@
 body {
-    font-family: Helvetica;
-    color: rgba(255, 255, 255, 0.801);
+  font-family: Helvetica;
+  color: rgba(255, 255, 255, 0.801);
 }
 
 .main {
-    background-color: #437efd;
-    border-radius: 5px;
-    padding: 5px;
-    padding-left: 10px;
-    margin: 4px;
-    padding-bottom: 10px;
-    width: 14%;
-
+  background-color: #437efd;
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .average {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .divBox {
-    margin-left: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 h1 {
-    font-size: 16px;
-    margin-bottom: 0px;
+  font-size: 16px;
+  margin-bottom: 0px;
 }
 
 .sol {
-    margin-bottom: -10px;
-    padding-bottom: 0px;
+  margin-bottom: -10px;
+  padding-bottom: 0px;
 }
 
 select {
-    background-color: white;
-    color: #437efd;
-}
-
-.dayContainer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+  background-color: white;
+  color: #437efd;
 }
 
 h2 {
-    font-size: 12px;
-    margin-bottom: -5px;
+  font-size: 12px;
+  margin-bottom: -5px;
 }
 
 .samples {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .maxMin {
-    margin-top: 6px;
+  margin-top: 6px;
+}
+
+.dayContainer {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 8px;
 }
 
 @media screen and (max-width: 768px) {
-    .dayContainer{flex-direction: column;}
-    .main {
-        width: 96%;
-    }
+  .dayContainer {
+    grid-template-columns: 1fr;
+  }
 }
