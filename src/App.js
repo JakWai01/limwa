@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import Data from "./Components/Data";
+import React from "react";
+import DataProvider from "./Components/DataProvider";
+import Filter from "./Components/Filter";
+import Day from "./Components/Day";
 import "./App.css";
 import Graph from "./Components/Graph";
+import "./Graph.css"
 
-function App() {
-  const numbers = [6, 5, 4, 3, 2, 1, 0];
+const App = ({ token }) => (
+  <DataProvider token={token}>
+    {({ loading, error, days, format, setFormat }) => {
+      if (loading) return <div>Loading days ...</div>;
+      if (error) return <div>Error loading days: {error} ...</div>;
 
-  const [unit, setUnit] = useState("");
-  console.log(unit);
+      return (
+        <>
+          <Filter
+            format={format}
+            onChange={(newFormat) => setFormat(newFormat)}
+          />
 
-  const listData = numbers.map((number, index) => (
-    <Data dayIndex={number} key={index} unit={unit} />
-  ));
+          {days.map((day, index) => (
+            <Day day={day} key={index} format={format} />
+          ))}
 
-  return (
-    <>
-      <form>
-        <select onChange={(e) => setUnit(e.target.value)}>
-          <option defaultValue value="Fahrenheit">
-            F
-          </option>
-          <option value="Celsius">C</option>
-          <option value="Kelvin">K</option>
-        </select>
-      </form>
-      {listData}
-      <Graph />
-    </>
-  );
-}
+          <Graph days={days} />
+        </>
+      );
+    }}
+  </DataProvider>
+);
 
 export default App;
