@@ -59,5 +59,5 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-    .dayContainer{flex-direction: row;}
+    .dayContainer{flex-direction: column;}
 }
