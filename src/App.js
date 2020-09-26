@@ -4,6 +4,7 @@ import Filter from "./Components/Filter";
 import Day from "./Components/Day";
 import "./App.css";
 import Graph from "./Components/Graph";
+import "./Graph.css"
 
 const App = ({ token }) => (
   <DataProvider token={token}>

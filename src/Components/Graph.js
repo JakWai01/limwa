@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 function Graph({ days }) {
@@ -147,81 +148,87 @@ function Graph({ days }) {
 
   return (
     <>
-      <LineChart
-        width={500}
-        height={300}
-        data={temp}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="maxTemp"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="averageTemp" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="minTemp" stroke="#eb4034" />
-      </LineChart>
-      <LineChart
-        width={500}
-        height={300}
-        data={pres}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="maxPres"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="averagePres" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="minPres" stroke="#eb4034" />
-      </LineChart>
-      <LineChart
-        width={500}
-        height={300}
-        data={wind}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="maxWind"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-        <Line type="monotone" dataKey="averageWind" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="minWind" stroke="#eb4034" />
-      </LineChart>
+      <div className="graphContainer">
+        <ResponsiveContainer width="33%" height={400}>
+          <LineChart
+            data={temp}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="maxTemp"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line type="monotone" dataKey="averageTemp" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="minTemp" stroke="#eb4034" />
+          </LineChart>
+        </ResponsiveContainer>
+        <ResponsiveContainer width="33%" height={400}>
+          <LineChart
+            width={500}
+            height={300}
+            data={pres}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="maxPres"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line type="monotone" dataKey="averagePres" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="minPres" stroke="#eb4034" />
+          </LineChart>
+        </ResponsiveContainer>
+        <ResponsiveContainer width="33%" height={400}>
+          <LineChart
+            width={500}
+            height={300}
+            data={wind}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="maxWind"
+              stroke="#8884d8"
+              activeDot={{ r: 8 }}
+            />
+            <Line type="monotone" dataKey="averageWind" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="minWind" stroke="#eb4034" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </>
   );
 }
