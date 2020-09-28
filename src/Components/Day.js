@@ -1,6 +1,6 @@
 import React from "react";
 
-function Day({ day, format }) {
+function Day({ day, format, windspeedFormat }) {
   return (
     <>
       <div className="main">
@@ -25,7 +25,7 @@ function Day({ day, format }) {
           </div>
 
           <div className="container">
-            <h2 className="average">{day.windspeedAverage} m/s</h2>
+            <h2 className="average">{day.windspeedAverage} {windspeedFormat === "mph"? "mph" : "m/s"}</h2>
             <h2 className="maxMin">
               {day.windspeedMax} / {day.windspeedMin}
             </h2>
