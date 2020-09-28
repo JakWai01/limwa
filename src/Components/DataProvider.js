@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import firebase from "firebase";
 
 const DataProvider = ({ token, children }) => {
   const [loading, setLoading] = useState(true);
@@ -6,10 +7,11 @@ const DataProvider = ({ token, children }) => {
   const [format, setFormat] = useState("F");
   const [data, setData] = useState({});
   const [windspeedFormat, setWindspeedFormat] = useState("m/s");
+  const [days, setDays] = useState([]);
 
   useEffect(() => {
     fetch(
-      "https://api.nasa.gov/insight_weather/?api_key=etIV1rEZcwSjjQq1qreyKogMVfTFsIgkMN1QhG6u&feedtype=json&ver=1.0"
+      `https://api.nasa.gov/insight_weather/?api_key=${token}&feedtype=json&ver=1.0`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -17,16 +19,31 @@ const DataProvider = ({ token, children }) => {
         setLoading(false);
       })
       .catch((e) => setError(e));
-  }, []);
+  }, [token]);
+
+  useEffect(() => {
+    data.sol_keys &&
+      setDays(
+        data.sol_keys.map((solKey) =>
+          convertToInternalDay(data[solKey], solKey, format, windspeedFormat)
+        )
+      );
+  }, [data, format, windspeedFormat]);
+  
+  let solkey = 652
+  useEffect(() => {
+    
+    days.length !== 0 && solkey < days[6].sol && 
+      firebase.database().ref("sol/").push(days[6])
+      solkey++;
+        
+  }, [days, solkey]);
 
   return children({
     loading,
     error,
-    days:
-      data.sol_keys &&
-      data.sol_keys.map((solKey) =>
-        convertToInternalDay(data[solKey], solKey, format, windspeedFormat)
-      ),
+    days,
+
     format,
     setFormat,
     windspeedFormat,
@@ -35,7 +52,7 @@ const DataProvider = ({ token, children }) => {
 };
 
 const convertToInternalDay = (day, solKey, format, windspeedFormat) => {
-  console.log(day);
+  //console.log(day);
   return {
     sol: solKey,
     season: day.Season,
@@ -74,7 +91,7 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat) => {
       windspeedFormat === "mph"
         ? Math.round(day.HWS.mn * 2.23694)
         : Math.round(day.HWS.mn),
-    windspeedSamples: Math.round(day.HWS.ct)
+    windspeedSamples: Math.round(day.HWS.ct),
   };
 };
 

@@ -6,11 +6,19 @@ import "./App.css";
 import Graph from "./Components/Graph";
 import "./Graph.css";
 import { Helmet } from "react-helmet";
-import FilterWindspeed from "./Components/FilterWindspeed"
+import FilterWindspeed from "./Components/FilterWindspeed";
 
 const App = ({ token }) => (
   <DataProvider token={token}>
-    {({ loading, error, days, format, setFormat, windspeedFormat, setWindspeedFormat }) => {
+    {({
+      loading,
+      error,
+      days,
+      format,
+      setFormat,
+      windspeedFormat,
+      setWindspeedFormat,
+    }) => {
       if (loading) return <div>Loading days ...</div>;
       if (error) return <div>Error loading days: {error} ...</div>;
 
@@ -28,12 +36,19 @@ const App = ({ token }) => (
           />
           <FilterWindspeed
             windspeedFormat={windspeedFormat}
-            onChange={(newWindspeedFormat) => setWindspeedFormat(newWindspeedFormat)}
+            onChange={(newWindspeedFormat) =>
+              setWindspeedFormat(newWindspeedFormat)
+            }
           />
           <Graph days={days} />
           <div className="dayContainer">
             {days.map((day, index) => (
-              <Day day={day} key={index} format={format} windspeedFormat={windspeedFormat}/>
+              <Day
+                day={day}
+                key={index}
+                format={format}
+                windspeedFormat={windspeedFormat}
+              />
             ))}
           </div>
         </>
