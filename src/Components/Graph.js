@@ -10,6 +10,7 @@ import {
 } from "recharts";
 
 function Graph({ days }) {
+  
   const temp = [
     {
       name: days[0].sol,

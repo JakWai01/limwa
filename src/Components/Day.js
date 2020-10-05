@@ -1,6 +1,7 @@
 import React from "react";
 
 function Day({ day, format, windspeedFormat }) {
+  
   return (
     <>
       <div className="main">
