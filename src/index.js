@@ -5,7 +5,7 @@ import App from "./App";
 import firebase from "firebase";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDeCLwxeQtPHvt1EpyYbRz5oCXeRTjOKbw",
+  apiKey: "91MejiYzInH091RnX4LXjuYjyJmZCt7JN7G73Yu1",
   authDomain: "limwa-6200b.firebaseapp.com",
   databaseURL: "https://limwa-6200b.firebaseio.com",
   projectId: "limwa-6200b",
