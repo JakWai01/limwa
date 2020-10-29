@@ -58,8 +58,6 @@ const DataProvider = ({ token, children }) => {
 };
 
 const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
-  
-  console.log(day);
 
   if (
     data.validity_checks[solKey].AT.valid === false ||
