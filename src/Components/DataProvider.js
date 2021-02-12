@@ -69,7 +69,7 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
       // data.validity_checks[solKey].AT?.valid === false &&
       // data.validity_checks[solKey].HWS?.valid === false &&
       // data.validity_checks[solKey].PRE?.valid === false
-      true
+      false
     ) {
       return {
         sol: solKey,
@@ -88,8 +88,9 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
         windspeedSamples: 0,
       };
     } else if (
-      data.validity_checks[solKey].AT?.valid === false &&
-      data.validity_checks[solKey].HWS?.valid === false
+      // data.validity_checks[solKey].AT?.valid === false &&
+      // data.validity_checks[solKey].HWS?.valid === false
+      true
     ) {
       return {
         sol: solKey,
