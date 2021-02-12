@@ -66,9 +66,10 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
     true
   ) {
     if (
-      data.validity_checks[solKey].AT?.valid === false &&
-      data.validity_checks[solKey].HWS?.valid === false &&
-      data.validity_checks[solKey].PRE?.valid === false
+      // data.validity_checks[solKey].AT?.valid === false &&
+      // data.validity_checks[solKey].HWS?.valid === false &&
+      // data.validity_checks[solKey].PRE?.valid === false
+      true
     ) {
       return {
         sol: solKey,
