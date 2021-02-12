@@ -66,9 +66,9 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
     true
   ) {
     if (
-      data.validity_checks[solKey].AT.valid === false &&
-      data.validity_checks[solKey].HWS.valid === false &&
-      data.validity_checks[solKey].PRE.valid === false
+      data.validity_checks[solKey].AT?.valid === false &&
+      data.validity_checks[solKey].HWS?.valid === false &&
+      data.validity_checks[solKey].PRE?.valid === false
     ) {
       return {
         sol: solKey,
@@ -87,8 +87,8 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
         windspeedSamples: 0,
       };
     } else if (
-      data.validity_checks[solKey].AT.valid === false &&
-      data.validity_checks[solKey].HWS.valid === false
+      data.validity_checks[solKey].AT?.valid === false &&
+      data.validity_checks[solKey].HWS?.valid === false
     ) {
       return {
         sol: solKey,
@@ -107,8 +107,8 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
         windspeedSamples: 0,
       };
     } else if (
-      data.validity_checks[solKey].AT.valid === false &&
-      data.validity_checks[solKey].PRE.valid === false
+      data.validity_checks[solKey].AT?.valid === false &&
+      data.validity_checks[solKey].PRE?.valid === false
     ) {
       return {
         sol: solKey,
@@ -136,8 +136,8 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
         windspeedSamples: Math.round(day.HWS.ct),
       };
     } else if (
-      data.validity_checks[solKey].HWS.valid === false &&
-      data.validity_checks[solKey].PRE.valid === false
+      data.validity_checks[solKey].HWS?.valid === false &&
+      data.validity_checks[solKey].PRE?.valid === false
     ) {
       return {
         sol: solKey,
@@ -170,7 +170,7 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
         windspeedMin: 0,
         windspeedSamples: 0,
       };
-    } else if (data.validity_checks[solKey].AT.valid === false) {
+    } else if (data.validity_checks[solKey].AT?.valid === false) {
       return {
         sol: solKey,
         season: day.Season,
@@ -196,7 +196,7 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
             : Math.round(day.HWS.mn),
         windspeedSamples: Math.round(day.HWS.ct),
       };
-    } else if (data.validity_checks[solKey].HWS.valid === false) {
+    } else if (data.validity_checks[solKey].HWS?.valid === false) {
       return {
         sol: solKey,
         season: day.Season,
@@ -228,7 +228,7 @@ const convertToInternalDay = (day, solKey, format, windspeedFormat, data) => {
         windspeedMin: 0,
         windspeedSamples: 0,
       };
-    } else if (data.validity_checks[solKey].PRE.valid === false) {
+    } else if (data.validity_checks[solKey].PRE?.valid === false) {
       return {
         sol: solKey,
         season: day.Season,
